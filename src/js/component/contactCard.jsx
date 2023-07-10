@@ -49,11 +49,11 @@ function ContactCard(){
 
                     </div>
                     
-                    <div className="col-3 d-flex justify-content-around">
-                        <button type="button" className="btn btn-light h-50">
+                    <div className="col-3 d-flex justify-content-start">
+                        <button type="button" className="btn btn-light h-50 mx-3">
                             <i className="bi bi-pencil-fill"></i>
                         </button>
-                        <button type="button" className="btn btn-light h-50">
+                        <button type="button" className="btn btn-light h-50 mx-3">
                             <i className="bi bi-trash-fill"></i>
                         </button>           
                     </div>
