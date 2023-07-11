@@ -1,17 +1,17 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector} from "react-redux";
 import { Link } from "react-router-dom";
 import "../../styles/home.css";
 
 import ContactCard from "../component/contactCard.jsx";
-import ContactForm from "../component/contactForm.jsx";
+import { element } from "prop-types";
 
-export const Home = () => { 
+export const Home = () => {
+	
 	const listaDeContactos = useSelector((store) => {
 		return store.contactos;
-	})
+	});
 
-	console.log(listaDeContactos);
 
 	return (
 	<div className="container">
@@ -26,11 +26,11 @@ export const Home = () => {
 		
 		<div className="row">
 			<ul className="list-group">
-				{listaDeContactos.map(elemento => {
-					return <ContactCard info={elemento}/>
+				{listaDeContactos.map((element, contactId) => {
+					return <ContactCard info={element} key={contactId} contactId={contactId}/>
 				})}
 			</ul>
 		</div>
-		
+
 	</div>
 );}

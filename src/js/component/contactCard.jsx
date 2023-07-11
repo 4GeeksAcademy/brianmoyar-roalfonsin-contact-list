@@ -1,10 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { agregarContacto, modificarContacto, borrarContacto } from "../store/slice/contactosSlice";
 
-function ContactCard({info}){
+function ContactCard({info, contactId}){
+    const dispatch = useDispatch();
     const profileImageClasses = "img-thumbnail rounded-circle";
     const textClasses = "ms-2 my-0 text-secondary";
     const imageStyle = { height: '100px', width: '100px'};
-    console.log("info",info);
     return (
         <li className="list-group-item">
             <div className="container-fluid">
@@ -53,7 +55,7 @@ function ContactCard({info}){
                         <button type="button" className="btn btn-light h-50 mx-3">
                             <i className="bi bi-pencil-fill"></i>
                         </button>
-                        <button type="button" className="btn btn-light h-50 mx-3">
+                        <button type="button" className="btn btn-light h-50 mx-3" onClick={ e => dispatch(borrarContacto(contactId))}>
                             <i className="bi bi-trash-fill"></i>
                         </button>           
                     </div>
