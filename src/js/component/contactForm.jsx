@@ -31,7 +31,7 @@ function ContactForm(){
                 </div>
                 <div className="mb-3">
                     <label className={labelClasses}>Email</label>
-                    <input type="email" className="form-control" placeholder="Enter email" name="email" onChange={inputOnChange}/>
+                    <input type="text" className="form-control" placeholder="Enter email" name="email" onChange={inputOnChange}/>
                 </div>
                 <div className="mb-3">
                     <label className={labelClasses}>Phone</label>
