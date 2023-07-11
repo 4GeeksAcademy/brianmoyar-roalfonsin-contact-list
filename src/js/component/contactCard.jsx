@@ -1,10 +1,10 @@
 import React from "react";
 
-function ContactCard(){
+function ContactCard({info}){
     const profileImageClasses = "img-thumbnail rounded-circle";
     const textClasses = "ms-2 my-0 text-secondary";
     const imageStyle = { height: '100px', width: '100px'};
-     
+    console.log("info",info);
     return (
         <li className="list-group-item">
             <div className="container-fluid">
@@ -22,28 +22,28 @@ function ContactCard(){
                         
                         <div className="row">
                             <div className="col d-flex justify-content-start">
-                                <h5>This is the name</h5>
+                                <h5>{info.name}</h5>
                             </div>
                         </div>
                         
                         <div className="row">
                             <div className="col d-flex flex-row">
                                 <i className="bi bi-geo-alt-fill text-secondary"></i>
-                                <p className={textClasses}>5015 address</p>
+                                <p className={textClasses}>{info.address}</p>
                             </div>
                         </div>
                         
                         <div className="row">
                             <div className="col d-flex flex-row">
                                 <i className="bi bi-telephone-fill text-secondary"></i>
-                                <p className={textClasses}>55-4950-4240</p>
+                                <p className={textClasses}>{info.phone}</p>
                             </div>
                         </div>
                         
                         <div className="row">
                             <div className="col d-flex flex-row">
                                 <i className="bi bi-envelope-fill text-secondary"></i>
-                                <p className={textClasses}>master@mypage.com</p>
+                                <p className={textClasses}>{info.email}</p>
                             </div>
                         </div>
 
