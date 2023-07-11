@@ -8,7 +8,6 @@ function EditForm({contactIndex}){
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const selector = useSelector((store) => {return store.contactos[contactIndex]});
-    console.log(selector);
     const [contactForm, setContactForm] = useState(
         {
             name: selector.name,
