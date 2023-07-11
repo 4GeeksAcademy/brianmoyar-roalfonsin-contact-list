@@ -48,10 +48,6 @@ export const listaDeContactos = createSlice({
             state.push(argument.payload);
         },
 
-        modificarContacto: (state) => {
-
-        },
-
         borrarContacto: (state, argument) => {
             state.splice(argument.payload, 1);
         },

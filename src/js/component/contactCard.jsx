@@ -1,12 +1,15 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { agregarContacto, modificarContacto, borrarContacto } from "../store/slice/contactosSlice";
+import { borrarContacto } from "../store/slice/contactosSlice";
+import { useNavigate } from "react-router";
 
 function ContactCard({info, contactId}){
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const profileImageClasses = "img-thumbnail rounded-circle";
     const textClasses = "ms-2 my-0 text-secondary";
     const imageStyle = { height: '100px', width: '100px'};
+
     return (
         <li className="list-group-item">
             <div className="container-fluid">
@@ -52,7 +55,7 @@ function ContactCard({info, contactId}){
                     </div>
                     
                     <div className="col-3 d-flex justify-content-start">
-                        <button type="button" className="btn btn-light h-50 mx-3">
+                        <button type="button" className="btn btn-light h-50 mx-3" onClick={e => navigate("/editcontact", {state:{id: contactId}})}>
                             <i className="bi bi-pencil-fill"></i>
                         </button>
                         <button type="button" className="btn btn-light h-50 mx-3" onClick={ e => dispatch(borrarContacto(contactId))}>
